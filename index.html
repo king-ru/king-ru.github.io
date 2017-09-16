@@ -179,7 +179,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##git基本命令如下：</p>
+<p>mkdir：        XX（创建一个空目录 XX）</p>
+<p>pwd：            显示当前目录的路径</p>
+<p>git init：        把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</p>
+<p>git add XX：把XX文件添加到暂存区中。</p>
+<p>git commit -m “XXX”    提交文件，XXX指的是注释。</p>
+<p>git status：    查看仓库状态</p>
+<p>git diff XX：    查看文件修改了哪些内容</p>
+<p>git log：        查看历史记录</p>
+<p>git  log –pretty=one line（简化历史记录信息）</p>
+<p>git reset -hard HEAD^或者git reset -hard HEAD~（数字）<br>回退到上一个版本，回退到哪个版本。如（git reset -harｄ HEAD~100，回退到100个版本）</p>
+<p>cat XX            查看XX文件内容</p>
+<p>git reflog        查看历史记录的版本号id</p>
+<p>git checkout -XX  把XX文件在工作区的修改全部撤销</p>
+<p>git rm XX        删除XX文件</p>
+<p>git remote add origin github地址/文件夹    关联一个远程<br>仓库</p>
+<p>git push -u （第一次要用u，以后不需要）origin master    把当前master分支推送到远程仓库</p>
+<p>git clone github地址/文件夹    从远程仓库克隆到本地</p>
+<p>##总结创建与合并分支命令如下：</p>
+<p>查看分支：git branch</p>
+<p>创建分支：git branch name</p>
+<p>切换分支：git checkout name</p>
+<p>创建+切换分支：git checkout -b name</p>
+<p>合并某分支到当前分支：git merge name</p>
+<p>删除分支：git branch -d name</p>
+<p>合并dev分支，禁用fast forward模式： git merge  -no-ff -m “注释” dev</p>
+<p>##禁用“Fast forward”模式步骤（dev代表分支name），被删除的分支信息还存在。</p>
+<p>1.创建一个dev分支  git checkout -b dev</p>
+<p>2.修改readme.txt中的内容。</p>
+<p>3.添加到暂存区。 git add readme.txt  git commit -m<br>“add merge”</p>
+<p>4.切换为主分支（master） git checkout master</p>
+<p>5.合并dev分支，使用命令  git merge -no-ff -m “注释”  dev</p>
+<p>6.查看历史记录 git log –graph –pretty=oneline –abbrev-commit</p>
+<p>##stash 存储的意思</p>
+<p>git stash：    把当前的工作隐藏起来，等以后恢复现场后继续工作。</p>
+<p>git stash list：查看所有被隐藏的文件列表。</p>
+<p>git stash apply：恢复被隐藏的文件，但是内容不删除。</p>
+<p>git stash drop：删除文件。</p>
+<p>git stash pop：恢复文件的同时也删除文件。</p>
+<hr>
+
       
 
       
@@ -187,6 +227,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -500,6 +551,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
             
             <div class="clearfix"></div>
